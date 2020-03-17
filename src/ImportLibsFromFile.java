@@ -11,41 +11,17 @@ public class ImportLibsFromFile {
         ArrayList<Bibliotek> returBib = new ArrayList<>();
         // TODO
         // loop igennem filen linje for linje
+        // lav addresse
         // lav bibliotek
-        // put bibliotek i Liste
-        File fh = new File(filename);
-        String line = "";
-        String vejFull = "";
-        String[] vejFullArr = null;
-        String vejNavn = "";
-        int vejNr = 0;
-        String[] lineArr = null;
-        Adresse tmpAdresse = null;
-        Bibliotek tmpBibliotek = null;
+        // tilføj addresse til bibliotek
+        // put bibliotek i liste
 
         if (fh.exists()) {
             Scanner ms = new Scanner(fh);
             while (ms.hasNextLine()) {
                 try {
-                    line = ms.nextLine();
-                    lineArr = line.split(",");
-                    tmpAdresse = new Adresse(lineArr[0],lineArr[1]);
-                    vejFull = lineArr[4];
-                    vejFullArr = vejFull.split(" ");
-                    try {
-                        vejNavn = vejFullArr[0];
-                        vejNr = Integer.parseInt(vejFullArr[1]);
-                        tmpAdresse.setVejNavn(vejNavn);
-                        tmpAdresse.setVejNr(vejNr);
-                    } catch (Exception e) {
-                        System.out.println("Error:  "+ e.toString());
-                        tmpAdresse.setVejNavn(vejFull);
-                    }
-
-                    tmpBibliotek = new Bibliotek(lineArr[2],lineArr[3],Double.parseDouble(lineArr[5]), Double.parseDouble(lineArr[8]),Integer.parseInt(lineArr[7]));
-                    tmpBibliotek.setType(lineArr[6]);
-                    tmpBibliotek.setAdresse(tmpAdresse);
-                    returBib.add(tmpBibliotek);
+                tmpAdresse = new Adresse();
+                    tmpBibliotek = new Bibliotek(//TODO: konstruktør);
                 } catch (Exception e) {
                     System.out.println("Line not ok: " + line);
                 }
