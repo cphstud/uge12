@@ -33,6 +33,9 @@ Cat       ,Sari,BIRMAN    ,BIRMAN,WhiteGrey ,Y,F,11,BIRTINYA
         ImportAnimalsFromSource importAnimalsFromSource = new ImportAnimalsFromSource();
         listOfAnimals = importAnimalsFromSource.getList(filename);
         System.out.println(listOfAnimals.size());
+        for (Animal animal: listOfAnimals) {
+            animal.makeSound();
+        }
 	// write your code here
     }
 }

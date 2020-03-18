@@ -33,14 +33,15 @@ public class ImportAnimalsFromSource {
                 }
                 if (startChar.contains("D")) {
                     // TODO:lav en hund
-
                     animal = new Hund(lineArr[1],lineArr[2],lineArr[3],lineArr[4],deSexed,lineArr[6],Integer.parseInt(lineArr[7]),lineArr[8]);
+                    returList.add(animal);
                 } else if (startChar.contains("at")) {
                     // TODO:lav en kat
                     animal = new Kat(lineArr[1],lineArr[2],lineArr[3],lineArr[4],deSexed,lineArr[6],Integer.parseInt(lineArr[7]),lineArr[8]);
+                    returList.add(animal);
                 } else {
+                    System.out.println("no animal");
                 }
-                returList.add(animal);
             }
         } else {
             throw new FileNotFoundException();
