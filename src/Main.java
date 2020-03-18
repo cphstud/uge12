@@ -32,6 +32,7 @@ Cat       ,Sari,BIRMAN    ,BIRMAN,WhiteGrey ,Y,F,11,BIRTINYA
         String filename = "Data/Animals.csv";
         ImportAnimalsFromSource importAnimalsFromSource = new ImportAnimalsFromSource();
         listOfAnimals = importAnimalsFromSource.getList(filename);
+        System.out.println(listOfAnimals.size());
 	// write your code here
     }
 }

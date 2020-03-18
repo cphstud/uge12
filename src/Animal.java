@@ -18,8 +18,9 @@ public abstract class Animal {
     int animalId;
     String location;
 
-   public Animal(String name, String sBreed, String pBreed, String colour, boolean deSexed, String gender,int age) {
+   public Animal(String name, String sBreed, String pBreed, String colour, boolean deSexed, String gender,int age, String location) {
        this.name=name;
+       this.location=location;
        this.sBreed=sBreed;
        this.pBreed=pBreed;
        this.color=colour;
@@ -67,4 +68,5 @@ public abstract class Animal {
     public String getLocation() {
         return location;
     }
+    public abstract void makeSound();
 }
